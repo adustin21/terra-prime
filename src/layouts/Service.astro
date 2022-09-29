@@ -1,0 +1,27 @@
+---
+export interface Props {
+	title: string;
+	pallete: {
+		backgroud: string;
+		labelBody: string;
+		labelBorder: string;
+	}
+}
+
+const {title, pallete} = Astro.props
+---
+
+<div class="service"
+style={`background: ${pallete.backgroud}`}>
+	<div class="label"
+	style={`background: ${pallete.labelBody}`}>
+		<span class="label__text">
+			{title}
+		</span>
+	</div>
+</div>
+
+<style lang="sass">
+	.service
+		backgroud:
+</style>

@@ -1,0 +1,100 @@
+---
+import SubscribeButton from "../preact-components/SubscribeButton";
+const iconsSet = [
+	{ico: "/images/terra-logo.png", alt: "Terra Logo"},
+	{ico: "/images/terra-music.png", alt: "Terra Music Logo"},
+	{ico: "/images/terra-video.png", alt: "Terra Video Logo"},
+	{ico: "/images/terra-delivery.png", alt: "Terra Delivery Logo"},
+	{ico: "/images/terra-taxi.png", alt: "Terra Taxi Logo"},
+	{ico: "/images/terra-prime.png", alt: "Terra Prime Logo"},
+]
+const items = ["Dog", "Cat", "Platypus"];
+
+---
+
+<div class="poster">
+	<div class="poster__description">
+		<h1 class="poster__title">
+			Your whole urban life in one subscription.
+		</h1>
+		<p class="poster__text">
+			Listen to music, watch movies, and get incredible discounts
+			on delivery, taxi, and even groceries.
+		</p>
+		<section class="poster__button-section">
+			<SubscribeButton client:load text="first month free"/>
+			<p class="poster__disclaimer">
+				after that it's USD 12 per month
+			</p>
+		</section>
+	</div>
+	<div class="icons">
+		<div class="icon icon_first">
+			<img src={iconsSet[0].ico} alt={iconsSet[0].alt}/>
+		</div>
+		{iconsSet.slice(1,5).map(icon=>{
+			return(
+			<div class="icon">
+				<img src={icon.ico} alt={icon.alt}/>
+			</div>)
+		})}
+		<div class="icon icon_last">
+			<img src={iconsSet[5].ico} alt={iconsSet[5].alt}/>
+		</div>
+	</div>
+</div>
+
+<style lang="sass">
+	@use "../styles/colors.sass" as c
+
+	.poster
+		font-size: 20px
+		display: grid
+		grid-template-columns: 40% 48%
+		justify-content: space-between
+		padding: 2em 1.25em
+		margin-top: 1.5em
+		border-radius: 20px
+		box-shadow: 2px 2px 8px #D6D6D6
+		.poster__text
+			font-size: 16px
+			line-height: 22px
+			margin: 2em 0 0
+		.poster__button-section
+			width: max-content
+			font-size: 14px
+			margin-top: 4em
+			.poster__disclaimer
+				margin: 2em 0 0
+				font-size: inherit
+				text-align: center
+				opacity: 0.7
+	.icons
+		font-size: 15px
+		display: grid
+		align-self: center
+		height: 21em
+		grid-template-columns: repeat(3, 1fr)
+		grid-template-rows: repeat(2, 1fr)
+		background-image: url("/images/logo-background.png")
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		.icon
+			width: 10em
+			height: 10em
+			justify-self: center
+			display: flex
+			justify-content: center
+			align-items: center
+			background-color: transparentize(c.$LightCyan, 0.7)
+			backdrop-filter: blur(1em)
+			border-radius: 2em
+			margin-bottom: 1em
+			&:nth-child(1), &:nth-child(4)
+				justify-self: start
+			&:nth-child(3), &:nth-child(6)
+				justify-self: end
+			img
+				width: 66.6%
+</style>
