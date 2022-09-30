@@ -1,0 +1,109 @@
+---
+import Service, {Props as ServiceProps} from "../layouts/Service.astro"
+import Gallery, { Movie } from "../preact-components/Gallery"
+
+const serviceProps: ServiceProps = {
+	title: "terra delivery",
+	pallete: {
+		backgroud: "#CBF3F066",
+		labelBody: "#FFE1EA",
+		labelBorder: "#FF6542"
+	}
+}
+const preferences: string[] = [
+	"100,000 products for the whole family",
+	"Protected chat with the courier and picker - discuss any details",
+	"The app is adapted for the visually impaired"
+]
+const bubbles: string[] = ["b1","b2","b3","b4","b5","b6","b7"]
+---
+
+<Service {...serviceProps}>
+<div class="delivery">
+	<h1 class="delivery__title">
+		Free delivery from restaurants and grocery stores
+	</h1>
+	<p class="delivery__text">
+		We deliver your favorite foods from restaurants in your city
+		absolutely free of charge. And our pickers and couriers work with
+		12 major grocery chains, so now you don't have to waste your time
+		on shopping, because we will choose the best products and bring
+		them to you at a convenient time.
+	</p>
+	<div class="delivery__preferences-box">
+		{bubbles.map(bubble=>
+			<div class="delivery__bubble" id={bubble}></div>)}
+		{preferences.map(preference =>
+			<div class="delivery__preference-card">{preference}</div>)}
+	</div>
+</div>
+</Service>
+
+<style lang="sass">
+	$TextWidth: 70%
+	.delivery
+		font-size: 20px
+		padding: 2em
+		.delivery__title
+			width: $TextWidth
+		.delivery__text
+			width: $TextWidth
+			margin-bottom: 3.5em
+		.delivery__preferences-box
+			display: flex
+			justify-content: space-between
+			position: relative
+			.delivery__preference-card
+				width: 27.5%
+				font-size: 20px
+				font-weight: bold
+				padding: 1em
+				box-sizing: border-box
+				background: rgba(255, 255, 255, 0.3)
+				box-shadow: 0px 0px 4px #82B1AE50
+				border-radius: .5em
+				backdrop-filter: blur(10px)
+				user-select: none
+				transition-duration: .4s
+				&:hover
+					background: rgba(255, 255, 255, 0.9)
+			.delivery__bubble
+				position: absolute
+				border-radius: 100%
+				width: 5em
+				height: 5em
+			#b1
+				background: #F17F29
+				top: -12px
+				left: 20px
+			#b2
+				background: #FF6542
+				left: 223px
+				top: 33px
+				scale: 0.5
+			#b3
+				background: #CBF3F0
+				left: 334px
+				top: 5px
+				scale: 0.7
+			#b4
+				background: #F87236
+				left: 567px
+				top: 0px
+				scale: 1.2
+			#b5
+				background: #CD0000
+				right: 119px
+				top: -50px
+				scale: 0.5
+			#b6
+				background: #091B1F
+				right: 233px
+				top: 0px
+				scale: 0.3
+			#b7
+				background: #F8B08A
+				right: -30px
+				top: 30px
+				scale: 0.5
+</style>
