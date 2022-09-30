@@ -14,14 +14,33 @@ const {title, pallete} = Astro.props
 <div class="service"
 style={`background: ${pallete.backgroud}`}>
 	<div class="label"
-	style={`background: ${pallete.labelBody}`}>
+	style={`
+		background: ${pallete.labelBody};
+		box-shadow: -96px 24px 0 0 ${pallete.labelBorder},
+					-96px 0 ${pallete.labelBorder},
+					0 24px ${pallete.labelBorder}
+	`}>
 		<span class="label__text">
 			{title}
 		</span>
 	</div>
+	<slot/>
 </div>
 
 <style lang="sass">
 	.service
-		backgroud:
+		font-size: 20px
+		min-height: 200px
+		margin-top: 4em
+		border-radius: 20px
+		overflow: hidden
+		position: relative
+		.label
+			font-size: 48px
+			width: 4.3em
+			padding: .5em 0
+			position: absolute
+			right: 0
+			text-align: center
+			border-radius: 0 0 0 30px
 </style>

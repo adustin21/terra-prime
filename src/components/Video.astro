@@ -1,5 +1,7 @@
 ---
 import Service, {Props as ServiceProps} from "../layouts/Service.astro"
+import Gallery, { Movie } from "../preact-components/Gallery"
+
 const serviceProps: ServiceProps = {
 	title: "terra video",
 	pallete: {
@@ -8,8 +10,41 @@ const serviceProps: ServiceProps = {
 		labelBorder: "#FF6542"
 	}
 }
+const movieList: Movie[] = [
+	{src: "/images/poster-joker.png", alt: '"Joker" movie poster'},
+	{src: "/images/poster-thor.png", alt: '"Thor" movie poster'},
+	{src: "/images/poster-jurassic-park.png",
+	alt: '"Jurassic Park" movie poster'},
+	{src: "/images/poster-black-widow.png",
+	alt: '"Black Widow" movie poster'},
+	{src: "/images/poster-star-wars.png",
+	alt: '"Star Wars The Last Jedi" movie poster'},
+]
 ---
 
 <Service {...serviceProps}>
-
+<div class="video">
+	<h1 class="video__title">
+		Watch movies anywhere and any time you want
+	</h1>
+	<p class="video__text">
+		Terra subscribers get free access to tens of thousands of movies
+		and TV series. Subscription also gives you a 20% discount on the
+		entire collection of movies available only for purchase based on
+		the rights holders' requirements.
+	</p>
+	<Gallery movieList={movieList} client:visible/>
+</div>
 </Service>
+
+<style lang="sass">
+	$TextWidth: 70%
+	.video
+		font-size: 20px
+		padding: 2em
+		.video__title
+			width: $TextWidth
+		.video__text
+			width: $TextWidth
+			margin-bottom: 3.5em
+</style>

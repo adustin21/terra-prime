@@ -1,0 +1,41 @@
+@use '../styles/colors' as c
+@use 'sass:math'
+$GalleryCardHeight: 286px
+$GalleryCardWidth: 193px
+
+.gallery
+	position: relative
+	.gallery__button
+		position: absolute
+		width: 40px
+		height: 40px
+		background: c.$LightCyan
+		box-shadow: 1px 1px 3px 0 #4e726f55
+		border-radius: 100%
+		border: none
+		top: math.div($GalleryCardHeight, 2 ) - 20px
+		background-image: url("/images/left-arrow.png")
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 30%
+	#gallery__button_right
+		left: calc(100% - 40px)
+		background-image: url("/images/right-arrow.png")
+	.gallery__cardsContainer
+		overflow-x: auto
+		overflow-y: hidden
+		white-space: nowrap
+		height: $GalleryCardHeight
+		-ms-overflow-style: none
+		scrollbar-width: none
+		scroll-behavior: smooth
+		padding-right: 60px
+		&::-webkit-scrollbar
+			display: none
+		.gallery__card
+			display: inline-block
+			width: $GalleryCardWidth
+			height: $GalleryCardHeight
+			border-radius: 10px
+			margin-left: 60px
+			background: c.$LightCyan
