@@ -1,0 +1,52 @@
+---
+import SubscribeButton from "../preact-components/SubscribeButton";
+---
+
+<div class="quick-offer">
+	<h2 class="quick-offer__title">Try Prime free for 30 days</h2>
+	<div class="quick-offer__background"></div>
+	<SubscribeButton client:visible text="start your free treal now"/>
+</div>
+
+<style lang="sass">
+	@use "../styles/colors" as c
+	$BackgroundBG: linear-gradient(45deg, c.$LightCyan, c.$PiggyPink, c.$LightCyan, c.$PiggyPink)
+	$BackgroundWidth: 25em
+	.quick-offer
+		font-size: 20px
+		margin: 2em 0
+		padding: 2em 0
+		display: grid
+		justify-content: center
+		overflow: hidden
+		border-radius: 1em
+		position: relative
+		.quick-offer__title
+			margin-bottom: 1em
+			position: relative
+			z-index: 2
+		.quick-offer__background
+			width: $BackgroundWidth
+			position: absolute
+			top: 6em
+			left: calc(50% - ($BackgroundWidth / 2))
+			height: 3em
+			scale: .9
+			background: $BackgroundBG
+			background-size: 200%
+			background-position: left
+			transition-duration: .3s
+			border-radius: inherit
+			z-index: -1
+		&:hover
+			.quick-offer__background
+				scale: 5
+				animation: back 5s linear 0s infinite
+@keyframes back
+	0%
+		background-position: left
+	50%
+		background-position: right
+	100%
+		background-position: left
+</style>
