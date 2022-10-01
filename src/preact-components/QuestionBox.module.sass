@@ -1,0 +1,35 @@
+@use '../styles/colors' as c
+
+.container
+	font-size: 20px
+	padding: 1em
+	background: c.$LightCyan
+	border-radius: 10px
+	position: relative
+	.container__crossButton
+		font-size: inherit
+		width: 1em
+		height: 1em
+		background: url("/images/cross-icon.png")
+		background-size: cover
+		border: none
+		position: absolute
+		right: 1em
+		top: 1em
+		transition-duration: .3s
+		cursor: pointer
+	hr
+		display: none
+		margin: 1em 0
+		border: none
+		height: 1px
+		background: transparentize(c.$Black,0.7)
+	.container__text
+		display: none
+		margin: 0
+		white-space: pre
+.container_open
+	.container__crossButton
+		rotate: 45deg
+	hr, .container__text
+		display: block
