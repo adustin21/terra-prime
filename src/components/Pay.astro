@@ -1,0 +1,49 @@
+---
+import Service, {Props as ServiceProps} from "../layouts/Service.astro"
+
+const serviceProps: ServiceProps = {
+	title: "terra pay",
+	pallete: {
+		backgroud: "#F17F2933",
+		labelBody: "#FFE1EA",
+		labelBorder: "#091B1F"
+	}
+}
+---
+
+<Service {...serviceProps}>
+<div class="pay">
+	<h2 class="pay__title">
+	Cashback of 15% on all purchases at partner stores, cashback
+	of 10% on public transport.
+	</h2>
+	<p class="pay__text">
+		Apply for a terra branded debit card or open a free terra pay
+		account and enjoy all the benefits of the terra partner program.
+	</p>
+	<div class="pay__terra-debit-card"></div>
+</div>
+</Service>
+
+<style lang="sass">
+	$TextWidth: 70%
+	.pay
+		font-size: 20px
+		padding: 2em
+		position: relative
+		.pay__title
+			width: $TextWidth
+		.pay__text
+			width: 47%
+			margin: 3.5em 0 0
+		.pay__terra-debit-card
+			position: absolute
+			right: 2em
+			bottom: 0
+			width: 500px
+			height: 107px
+			background-image: url(/images/terra-debit-card.png)
+			background-size: cover
+			border-radius: 1em 1em 0 0
+			box-shadow: 4px -4px 13px rgba(43, 6, 6, 0.25)
+</style>
