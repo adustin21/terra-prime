@@ -9,6 +9,7 @@ import Video from '../components/Video.astro';
 import Layout from '../layouts/Layout.astro';
 import LoginForm from "../preact-components/LoginForm";
 import ErrorPopUp from "../preact-components/ErrorPopUp";
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="terra prime">
@@ -22,5 +23,6 @@ import ErrorPopUp from "../preact-components/ErrorPopUp";
 		<BottomPoster />
 		<LoginForm client:load/>
 		<ErrorPopUp client:load/>
+		<Footer />
 	</main>
 </Layout>
