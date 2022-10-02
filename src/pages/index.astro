@@ -8,6 +8,7 @@ import QuickOffer from '../components/QuickOffer.astro';
 import Video from '../components/Video.astro';
 import Layout from '../layouts/Layout.astro';
 import LoginForm from "../preact-components/LoginForm";
+import ErrorPopUp from "../preact-components/ErrorPopUp";
 ---
 
 <Layout title="terra prime">
@@ -20,5 +21,6 @@ import LoginForm from "../preact-components/LoginForm";
 		<FAQ />
 		<BottomPoster />
 		<LoginForm client:load/>
+		<ErrorPopUp client:load/>
 	</main>
 </Layout>
