@@ -1,5 +1,6 @@
 ---
 import SubscribeButton from "../preact-components/SubscribeButton";
+import OpenErrorPopUp from "../preact-components/OpenErrorPopUp";
 ---
 
 <div class="poster">
@@ -23,11 +24,13 @@ import SubscribeButton from "../preact-components/SubscribeButton";
 		<h2 class="gift-promo__title">
 			Buy a terra prime gift membership
 		</h2>
+		<OpenErrorPopUp client:visible>
 		<div class="gift-promo__coupon-box">
 			<div class="gift-promo__coupon">1 mont</div>
 			<div class="gift-promo__coupon">6 months</div>
 			<div class="gift-promo__coupon" id="year">1 year</div>
 		</div>
+		</OpenErrorPopUp>
 	</div>
 </div>
 

@@ -4,4 +4,4 @@ export type LoginFormState = boolean
 export const loginFormState = atom<LoginFormState>(false)
 
 export type ErrorPopupState = boolean
-export const errorPopupState = atom<ErrorPopupState>(true)
+export const errorPopupState = atom<ErrorPopupState>(false)
