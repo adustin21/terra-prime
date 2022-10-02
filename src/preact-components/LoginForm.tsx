@@ -1,14 +1,17 @@
 import cs from "./LoginForm.module.sass";
 import { useState } from "preact/hooks";
+import { loginFormState } from "../nanostores/initial";
 
 type SignMode = "in" | "up"
 type Props = {}
 
 function LoginForm({}: Props) {
-	console.log("hey")
+	const windowIsOpen = loginFormState.get()
 	const [signMode, setSignMode] = useState<SignMode>("in")
 	const [wrongAccount, setWrongAccount] = useState<boolean>(false)
 	const [wrongCountry, setWrongCountry] = useState<boolean>(false)
+
+	if(!windowIsOpen) return ;
 	switch (signMode) {
 		case "in":
 			return(
