@@ -1,5 +1,4 @@
 import { useStore } from "@nanostores/preact";
-import "preact/debug"
 import { loginFormState } from "../nanostores/initial";
 import cs from "./SubscribeButton.module.sass";
 
