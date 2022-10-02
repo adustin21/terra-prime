@@ -1,3 +1,6 @@
+import { useStore } from "@nanostores/preact";
+import "preact/debug"
+import { loginFormState } from "../nanostores/initial";
 import cs from "./SubscribeButton.module.sass";
 
 type Props = {
@@ -5,9 +8,14 @@ type Props = {
 }
 
 function SubscribeButton({text}: Props) {
-  return (
-	<button className={cs.container}><span>{text}</span></button>
-  )
+	const isLoginFormOpen = useStore(loginFormState)
+	return (
+		<button
+		className={cs.container}
+		onClick={e=>loginFormState.set(!isLoginFormOpen)}>
+			<span>{text}</span>
+		</button>
+	)
 }
 
 export default SubscribeButton

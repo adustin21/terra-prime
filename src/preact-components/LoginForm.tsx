@@ -1,21 +1,31 @@
 import cs from "./LoginForm.module.sass";
 import { useState } from "preact/hooks";
+import { useStore } from "@nanostores/preact";
 import { loginFormState } from "../nanostores/initial";
 
 type SignMode = "in" | "up"
 type Props = {}
 
 function LoginForm({}: Props) {
-	const windowIsOpen = loginFormState.get()
+	const windowIsOpen = useStore(loginFormState)
 	const [signMode, setSignMode] = useState<SignMode>("in")
 	const [wrongAccount, setWrongAccount] = useState<boolean>(false)
 	const [wrongCountry, setWrongCountry] = useState<boolean>(false)
+	const closeWindow = (e: any) => {
+		const target = e.target as HTMLElement
+		if (!target) return ;
+		console.log(target.className)
+		if (target.className === cs.container ||
+			target.className === cs.container__button_close){
+				loginFormState.set(false)
+		}
+	}
 
-	if(!windowIsOpen) return ;
+	if(!windowIsOpen) return null;
 	switch (signMode) {
 		case "in":
 			return(
-				<div className={cs.container}>
+				<div className={cs.container} onClick={closeWindow}>
 				<div className={cs.container__box}>
 					<div className={cs.container__toggler}>
 						<h2>sign-in</h2>
@@ -26,7 +36,8 @@ function LoginForm({}: Props) {
 					<span>{wrongAccount?"Sorry, we can’t find your account":""}</span>
 					<input required type="text" placeholder="Login" name="login"/>
 					<input required type="password" placeholder="Password" name="password"/>
-					<button type="reset">cancel</button>
+					<button type="reset"
+					className={cs.container__button_close}>cancel</button>
 					<button type="submit">submit</button>
 					</form>
 				</div>
@@ -34,7 +45,7 @@ function LoginForm({}: Props) {
 			)
 		case "up":
 			return(
-				<div className={cs.container}>
+				<div className={cs.container}onClick={closeWindow}>
 				<div className={cs.container__box}>
 					<div className={cs.container__toggler}>
 						<button onClick={e=>setSignMode("in")}>sign-in</button>
@@ -49,7 +60,8 @@ function LoginForm({}: Props) {
 					required type="text" placeholder="Country of residence"/>
 					<input type="text" placeholder="Login" disabled/>
 					<input type="text" placeholder="Password" disabled/>
-					<button type="reset">cancel</button>
+					<button type="reset"
+					className={cs.container__button_close}>cancel</button>
 					<button type="submit" disabled>submit</button>
 					</form>
 				</div>
