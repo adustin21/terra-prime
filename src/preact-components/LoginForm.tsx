@@ -14,7 +14,6 @@ function LoginForm({}: Props) {
 	const closeWindow = (e: any) => {
 		const target = e.target as HTMLElement
 		if (!target) return ;
-		console.log(target.className)
 		if (target.className === cs.container ||
 			target.className === cs.container__button_close){
 				loginFormState.set(false)
