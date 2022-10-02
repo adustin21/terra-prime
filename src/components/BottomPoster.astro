@@ -1,0 +1,96 @@
+---
+import SubscribeButton from "../preact-components/SubscribeButton";
+---
+
+<div class="poster">
+	<div class="poster__description">
+		<h2 class="poster__title">
+			Enjoy the benefits of terra prime now:
+		</h2>
+		<p class="poster__text">
+			subscribe and a hot pizza with free delivery will come to you
+			in just 30 minutes. Because there's nothing better than an
+			evening spent with pizza and terra video 😉
+		</p>
+		<section class="poster__button-section">
+			<SubscribeButton client:load text="start your free treal now"/>
+			<p class="poster__disclaimer">
+				after that it's USD 12 per month
+			</p>
+		</section>
+	</div>
+	<div class="gift-promo">
+		<h2 class="gift-promo__title">
+			Buy a terra prime gift membership
+		</h2>
+		<div class="gift-promo__coupon-box">
+			<div class="gift-promo__coupon">1 mont</div>
+			<div class="gift-promo__coupon">6 months</div>
+			<div class="gift-promo__coupon" id="year">1 year</div>
+		</div>
+	</div>
+</div>
+
+<style lang="sass">
+	@use "../styles/colors.sass" as c
+
+	.poster
+		font-size: 20px
+		display: grid
+		grid-template-columns: 40% 55%
+		justify-content: space-between
+		padding: 2em 1.25em
+		margin-top: 1.5em
+		border-radius: 20px
+		box-shadow: 2px 2px 8px #D6D6D6
+		background: c.$White
+		.poster__title
+			font-size: 48px
+			line-height: 50px
+		.poster__text
+			font-size: 16px
+			line-height: 22px
+			margin: 2em 0 0
+		.poster__button-section
+			width: max-content
+			font-size: 14px
+			margin-top: 4em
+			.poster__disclaimer
+				margin: 2em 0 0
+				font-size: inherit
+				text-align: center
+				opacity: 0.7
+	.gift-promo
+		border-left: dashed 1px c.$PrincetonOrange
+		padding-left: 3em
+		opacity: 0.7
+		transition-duration: .2s
+		&:hover
+			opacity: 1
+		.gift-promo__title
+			font-size: 48px
+			line-height: 50px
+		.gift-promo__coupon-box
+			display: grid
+			justify-content: space-between
+			grid-template-columns: 47% 47%
+			grid-template-areas: "one-month six-months" "one-year one-year"
+			.gift-promo__coupon
+				background: linear-gradient(134deg, #FFE1EA , #F87236)
+				font-weight: 700
+				font-size: 36px
+				padding: 1em
+				border-radius: 10px
+				margin-top: 1em
+				color: c.$LightCyan
+				text-align: center
+				opacity: 0.5
+				cursor: pointer
+				transition-duration: .2s
+				&:hover
+					opacity: 1
+			#year
+				grid-area: one-year
+
+
+</style>
