@@ -42,14 +42,18 @@ const { title } = Astro.props;
 			width: 95%
 	h1, h2, h3, h4
 		margin: 0
-		@media screen and (max-width: 400px)
-			scale: 0.8
 	h1
 		font-size: 48px
 		line-height: 48px
+		@media screen and (max-width: 400px)
+			font-size: 40px
+			line-height: 40px
 	h2
 		font-size: 40px
 		line-height: 40px
+		@media screen and (max-width: 400px)
+			font-size: 32px
+			line-height: 32px
 	h3
 		font-size: 24px
 		line-height: 24px
