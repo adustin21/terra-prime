@@ -105,4 +105,33 @@ const bubbles: string[] = ["b1","b2","b3","b4","b5","b6","b7"]
 				right: -30px
 				top: 30px
 				scale: 0.5
+		@media screen and (max-width: 1110px)
+			#b4
+				display: none
+		@media screen and (max-width: 769px)
+			.delivery__title, .delivery__text
+				width: 100%
+			.delivery__preferences-box
+				.delivery__preference-card
+					width: 45%
+					&:last-child
+						display: none
+			#b4
+				display: none
+		@media screen and (max-width: 540px)
+			.delivery__preferences-box
+				background-image: url(/images/circles-backround.png)
+				background-size: cover
+				display: grid
+				.delivery__bubble
+					display: none
+				.delivery__preference-card
+					width: 100%
+					margin-bottom: 1em
+					&:last-child
+						display: initial
+		@media screen and (max-width: 475px)
+			padding: 2em 1em
+
+
 </style>
