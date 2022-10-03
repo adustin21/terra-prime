@@ -38,8 +38,12 @@ const { title } = Astro.props;
 		margin: 0 auto
 		width: 1110px
 		padding-bottom: 80px
+		@media screen and (max-width: 1190px)
+			width: 95%
 	h1, h2, h3, h4
 		margin: 0
+		@media screen and (max-width: 400px)
+			scale: 0.8
 	h1
 		font-size: 48px
 		line-height: 48px
@@ -56,4 +60,5 @@ const { title } = Astro.props;
 		font-family: inherit
 	button
 		font-weight: bold
+
 </style>

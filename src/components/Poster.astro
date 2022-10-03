@@ -98,4 +98,47 @@ const items = ["Dog", "Cat", "Platypus"];
 				justify-self: end
 			img
 				width: 66.6%
+	@media screen and (max-width: 1190px)
+		.poster
+			grid-template-columns: 50% 45%
+		.icons
+			grid-template-columns: repeat(2, 1fr)
+			.icon_first, .icon_last
+				display: none
+	@media screen and (max-width: 800px)
+		.poster
+			grid-template-columns: 1fr
+			background-image: url("/images/logo-background.png")
+			background-size: 80%
+			background-repeat: no-repeat
+			background-position: center
+			.poster__button-section
+				display: flex
+				width: 100%
+				justify-content: space-between
+				align-items: center
+				.poster__disclaimer
+					margin: 0
+					width: 50%
+		.icons
+			display: none
+	@media screen and (max-width: 700px)
+		.poster
+			>*
+				text-align: center
+			.poster__button-section
+				display: grid
+				justify-content: center
+				.poster__disclaimer
+					margin: 2em 0 0
+					width: 100%
+	@media screen and (max-width: 500px)
+		.poster
+			padding: 1em 0
+			background-image: url("/images/logo-background-square.png")
+			>*
+				text-align: center
+				width: 95%
+				margin-left: auto
+				margin-right: auto
 </style>

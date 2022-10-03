@@ -5,7 +5,7 @@ import SignInButton from "../preact-components/SignInButton";
 	<img
 	width="181" height="48"
 	src="/images/logo.png" alt="Terra Prime Logo"/>
-	<SignInButton client:load/>
+	<div class="header__sign-in-section"><SignInButton client:load /></div>
 </header>
 
 <style lang="sass">
@@ -15,4 +15,8 @@ import SignInButton from "../preact-components/SignInButton";
 		justify-content: space-between
 		align-items: center
 		padding: 16px 0
+		@media screen and (max-width: 400px)
+			justify-content: center
+			.header__sign-in-section
+				display: none
 </style>
