@@ -17,11 +17,11 @@ const serviceProps: ServiceProps = {
 	Cashback of 15% on all purchases at partner stores, cashback
 	of 10% on public transport.
 	</h2>
+	<div class="pay__terra-debit-card"></div>
 	<p class="pay__text">
 		Apply for a terra branded debit card or open a free terra pay
 		account and enjoy all the benefits of the terra partner program.
 	</p>
-	<div class="pay__terra-debit-card"></div>
 </div>
 </Service>
 
@@ -36,6 +36,13 @@ const serviceProps: ServiceProps = {
 		.pay__text
 			width: 47%
 			margin: 3.5em 0 0
+			padding: 1em
+			background: #fffffff0
+			// backdrop-filter: blur(20px)
+			box-shadow: 1px 1px 4px  0px #00000010
+			border-radius: 1em
+			position: relative
+			z-index: 1
 		.pay__terra-debit-card
 			position: absolute
 			right: 2em
@@ -46,4 +53,5 @@ const serviceProps: ServiceProps = {
 			background-size: cover
 			border-radius: 1em 1em 0 0
 			box-shadow: 4px -4px 13px rgba(43, 6, 6, 0.25)
+			z-index: 0
 </style>
