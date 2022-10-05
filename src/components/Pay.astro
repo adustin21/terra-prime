@@ -19,39 +19,62 @@ const serviceProps: ServiceProps = {
 	</h2>
 	<div class="pay__terra-debit-card"></div>
 	<p class="pay__text">
+		<span>
 		Apply for a terra branded debit card or open a free terra pay
 		account and enjoy all the benefits of the terra partner program.
+		</span>
 	</p>
 </div>
 </Service>
 
 <style lang="sass">
+	@use "../styles/colors" as c
 	$TextWidth: 70%
 	.pay
 		font-size: 20px
-		padding: 2em
+		padding: 2em 2em 10em
 		position: relative
 		.pay__title
 			width: $TextWidth
-		.pay__text
-			width: 47%
-			margin: 3.5em 0 0
-			padding: 1em
-			background: #fffffff0
-			// backdrop-filter: blur(20px)
-			box-shadow: 1px 1px 4px  0px #00000010
-			border-radius: 1em
-			position: relative
-			z-index: 1
-		.pay__terra-debit-card
+		.pay__text, .pay__terra-debit-card
 			position: absolute
-			right: 2em
-			bottom: 0
 			width: 500px
-			height: 107px
-			background-image: url(/images/terra-debit-card.png)
-			background-size: cover
 			border-radius: 1em 1em 0 0
 			box-shadow: 4px -4px 13px rgba(43, 6, 6, 0.25)
+		.pay__text
+			padding: 1em
+			height: 107px
+			left: 2em
+			bottom: -1em
+			box-sizing: border-box
+			z-index: 1
+			background: linear-gradient(45deg,c.$Black,c.$DarkJungleGreen)
+			color: c.$PiggyPink
+			span
+				background: linear-gradient(90deg, #CBF3F0 0%, #FFE1EA 100%)
+				-webkit-background-clip: text
+				-webkit-text-fill-color: transparent
+				background-clip: text
+				text-fill-color: transparent
+		.pay__terra-debit-card
+			height: 147px
+			right: 2em
+			bottom: 0
+			background-image: url(/images/terra-debit-card.png)
+			background-size: cover
 			z-index: 0
+		@media screen and (max-width: 769px)
+			.pay__title
+				width: 100%
+		@media screen and (max-width: 627px)
+			.pay__terra-debit-card
+				display: none
+			.pay__text
+				width: calc(100% - 4em)
+				height: 167px
+		@media screen and (max-width: 475px)
+			padding: 2em 1em 10em
+			.pay__text
+				left: 1em
+				width: calc(100% - 2em)
 </style>
