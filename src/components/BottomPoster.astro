@@ -63,6 +63,18 @@ import OpenErrorPopUp from "../preact-components/OpenErrorPopUp";
 				font-size: inherit
 				text-align: center
 				opacity: 0.7
+		@media screen and (max-width: 1120px)
+			display: block
+			.poster__description
+				display: flex
+				flex-wrap: wrap
+				justify-content: center
+				text-align: center
+		@media screen and (max-width: 600px)
+			padding: 2em 1em
+			.poster__description
+				width: 100%
+
 	.gift-promo
 		border-left: dashed 1px c.$PrincetonOrange
 		padding-left: 3em
@@ -94,6 +106,8 @@ import OpenErrorPopUp from "../preact-components/OpenErrorPopUp";
 					opacity: 1
 			#year
 				grid-area: one-year
+		@media screen and (max-width: 1120px)
+			display: none
 
 
 </style>
