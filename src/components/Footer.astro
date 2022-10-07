@@ -11,7 +11,7 @@
 			<span>© 2018–2022 <b>terra</b> 18+</span>
 		</div>
 	</div>
-	<img
+	<img class="footer__logo"
 	width="181" height="48"
 	src="/images/logo.png" alt="Terra Prime Logo"/>
 </div>
@@ -38,6 +38,33 @@
 			margin-top: 1em
 			b
 				margin: 0 5em 0 3em
+		@media screen and (max-width: 800px)
+			justify-content: center
+			.footer__nav
+				.footer__ul
+					justify-content: center
+					.footer__li
+						margin: 0 1em
+			.footer__copyright
+				display: flex
+				justify-content: center
+			.footer__logo
+				display: none
+		@media screen and (max-width: 600px)
+			.footer__nav
+				.footer__ul
+					flex-direction: column
+					.footer__li
+						margin: .5em auto
+						text
+			.footer__copyright
+				span
+					display: flex
+					align-items: center
+					flex-direction: column
+					b
+						margin: 1em 0
+
 
 
 
