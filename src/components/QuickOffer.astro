@@ -24,6 +24,8 @@ import SubscribeButton from "../preact-components/SubscribeButton";
 		.quick-offer__title
 			margin-bottom: 1em
 			position: relative
+			padding: 0 .5em
+			text-align: center
 		.quick-offer__background
 			width: $BackgroundWidth
 			position: absolute
@@ -41,6 +43,9 @@ import SubscribeButton from "../preact-components/SubscribeButton";
 			.quick-offer__background
 				scale: 5
 				animation: back 5s linear 0s infinite
+		@media screen and (max-width: 768px)
+			.quick-offer__background
+				display: none
 @keyframes back
 	0%
 		background-position: left
