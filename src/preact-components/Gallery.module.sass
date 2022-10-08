@@ -5,48 +5,54 @@ $GalleryCardWidth: 193px
 
 .gallery
 	position: relative
+.gallery__button
+	position: absolute
+	top: math.div($GalleryCardHeight, 2 ) - 20px
+
+	width: 40px
+	height: 40px
+
+	border: none
+	border-radius: 100%
+	background: c.$LightCyan
+	background-image: url("/images/left-arrow.png")
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 30%
+	box-shadow: 1px 1px 3px 0 #4e726f55
+#gallery__button_right
+	left: calc(100% - 40px)
+
+	background-image: url("/images/right-arrow.png")
+.gallery__cardsContainer
+	overflow-x: auto
+	overflow-y: hidden
+
+	height: $GalleryCardHeight
+	padding-right: 60px
+
+	white-space: nowrap
+
+	-ms-overflow-style: none
+	scrollbar-width: none
+	scroll-behavior: smooth
+	&::-webkit-scrollbar
+		display: none
+.gallery__card
+	display: inline-block
+
+	width: $GalleryCardWidth
+	height: $GalleryCardHeight
+	margin-left: 60px
+
+	border-radius: 10px
+	background: c.$LightCyan
+@media screen and ( max-width: 768px )
 	.gallery__button
-		position: absolute
-		width: 40px
-		height: 40px
-		background: c.$LightCyan
-		box-shadow: 1px 1px 3px 0 #4e726f55
-		border-radius: 100%
-		border: none
-		top: math.div($GalleryCardHeight, 2 ) - 20px
-		background-image: url("/images/left-arrow.png")
-		background-repeat: no-repeat
-		background-position: center
-		background-size: 30%
-	#gallery__button_right
-		left: calc(100% - 40px)
-		background-image: url("/images/right-arrow.png")
-	.gallery__cardsContainer
-		overflow-x: auto
-		overflow-y: hidden
-		white-space: nowrap
-		height: $GalleryCardHeight
-		-ms-overflow-style: none
-		scrollbar-width: none
-		scroll-behavior: smooth
-		padding-right: 60px
-		&::-webkit-scrollbar
-			display: none
-		.gallery__card
-			display: inline-block
-			width: $GalleryCardWidth
-			height: $GalleryCardHeight
-			border-radius: 10px
-			margin-left: 60px
-			background: c.$LightCyan
-	@media screen and ( max-width: 768px )
-		.gallery__button
-			display: none
-		.gallery__cardsContainer
-			.gallery__card
-				margin: 0 60px 0 0
-	@media screen and ( max-width: 475px )
-		.gallery__cardsContainer
-			.gallery__card
-				margin: 0 30px 0 0
+		display: none
+	.gallery__card
+		margin: 0 60px 0 0
+@media screen and ( max-width: 475px )
+	.gallery__card
+		margin: 0 30px 0 0
 
