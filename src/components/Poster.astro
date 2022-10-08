@@ -9,7 +9,6 @@ const iconsSet = [
 	{ico: "/images/terra-prime.png", alt: "Terra Prime Logo"},
 ]
 const items = ["Dog", "Cat", "Platypus"];
-
 ---
 
 <div class="poster">
@@ -29,16 +28,16 @@ const items = ["Dog", "Cat", "Platypus"];
 		</section>
 	</div>
 	<div class="icons">
-		<div class="icon icon_first">
+		<div class="icons__icon icons__icon_first">
 			<img src={iconsSet[0].ico} alt={iconsSet[0].alt}/>
 		</div>
 		{iconsSet.slice(1,5).map(icon=>{
 			return(
-			<div class="icon">
+			<div class="icons__icon">
 				<img src={icon.ico} alt={icon.alt}/>
 			</div>)
 		})}
-		<div class="icon icon_last">
+		<div class="icons__icon icons__icon_last">
 			<img src={iconsSet[5].ico} alt={iconsSet[5].alt}/>
 		</div>
 	</div>
@@ -48,97 +47,126 @@ const items = ["Dog", "Cat", "Platypus"];
 	@use "../styles/colors.sass" as c
 
 	.poster
-		font-size: 20px
 		display: grid
-		grid-template-columns: 40% 48%
 		justify-content: space-between
-		padding: 2em 1.25em
+
 		margin-top: 1.5em
+		padding: 2em 1.25em
+
 		border-radius: 20px
-		box-shadow: 2px 2px 8px #D6D6D6
 		background: c.$White
-		.poster__text
-			font-size: 16px
-			line-height: 22px
-			margin: 2em 0 0
-		.poster__button-section
-			width: max-content
-			font-size: 14px
-			margin-top: 4em
-			.poster__disclaimer
-				margin: 2em 0 0
-				font-size: inherit
-				text-align: center
-				opacity: 0.7
-	.icons
-		font-size: 15px
-		display: grid
-		align-self: center
-		height: 21em
-		grid-template-columns: repeat(3, 1fr)
-		grid-template-rows: repeat(2, 1fr)
-		background-image: url("/images/logo-background.png")
-		background-size: contain
-		background-repeat: no-repeat
-		background-position: center
-		.icon
-			width: 10em
-			height: 10em
-			justify-self: center
-			display: flex
-			justify-content: center
-			align-items: center
-			background-color: transparentize(c.$LightCyan, 0.7)
-			backdrop-filter: blur(1em)
-			border-radius: 2em
-			margin-bottom: 1em
-			&:nth-child(1), &:nth-child(4)
-				justify-self: start
-			&:nth-child(3), &:nth-child(6)
-				justify-self: end
-			img
-				width: 66.6%
+		box-shadow: 2px 2px 8px #D6D6D6
+
+		font-size: 20px
+
+		grid-template-columns: 40% 48%
+	.poster__text
+		margin: 2em 0 0
+
+		font-size: 16px
+		line-height: 22px
+	.poster__button-section
+		width: max-content
+		margin-top: 4em
+
+		font-size: 14px
+	.poster__disclaimer
+		margin: 2em 0 0
+
+		text-align: center
+
+		opacity: 0.7
+
+		font-size: inherit
 	@media screen and (max-width: 1190px)
 		.poster
 			grid-template-columns: 50% 45%
-		.icons
-			grid-template-columns: repeat(2, 1fr)
-			.icon_first, .icon_last
-				display: none
 	@media screen and (max-width: 800px)
 		.poster
-			grid-template-columns: 1fr
 			background-image: url("/images/logo-background.png")
-			background-size: 80%
 			background-repeat: no-repeat
 			background-position: center
-			.poster__button-section
-				display: flex
-				width: 100%
-				justify-content: space-between
-				align-items: center
-				.poster__disclaimer
-					margin: 0
-					width: 50%
-		.icons
-			display: none
+			background-size: 80%
+
+			grid-template-columns: 1fr
+		.poster__button-section
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+			width: 100%
+		.poster__disclaimer
+			width: 50%
+			margin: 0
 	@media screen and (max-width: 700px)
 		.poster
 			>*
 				text-align: center
-			.poster__button-section
-				display: grid
-				justify-content: center
-				.poster__disclaimer
-					margin: 2em 0 0
-					width: 100%
+		.poster__button-section
+			display: grid
+			justify-content: center
+		.poster__disclaimer
+			width: 100%
+			margin: 2em 0 0
 	@media screen and (max-width: 500px)
 		.poster
 			padding: 1em 0
+
 			background-image: url("/images/logo-background-square.png")
 			>*
-				text-align: center
 				width: 95%
-				margin-left: auto
 				margin-right: auto
+				margin-left: auto
+
+				text-align: center
+
+				text-align: center
+</style>
+
+<style lang="sass">
+	@use "../styles/colors.sass" as c
+
+	.icons
+		display: grid
+		align-self: center
+
+		height: 21em
+
+		background-image: url("/images/logo-background.png")
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+
+		font-size: 15px
+
+		grid-template-columns: repeat(3, 1fr)
+		grid-template-rows: repeat(2, 1fr)
+	.icons__icon
+		display: flex
+		align-items: center
+		justify-content: center
+
+		width: 10em
+		height: 10em
+		margin-bottom: 1em
+
+		border-radius: 2em
+		background-color: #000 //transparentize(c.$LightCyan, 0.7)
+
+		justify-self: center
+		backdrop-filter: blur(1em)
+		&:nth-child(1), &:nth-child(4)
+			justify-self: start
+		&:nth-child(3), &:nth-child(6)
+			justify-self: end
+		img
+			width: 66.6%
+	@media screen and (max-width: 1190px)
+		.icons
+			grid-template-columns: repeat(2, 1fr)
+		.icons__icon_first, .icons__icon_last
+			display: none
+	@media screen and (max-width: 800px)
+		.icons
+			display: none
 </style>
