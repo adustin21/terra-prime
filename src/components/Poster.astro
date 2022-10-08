@@ -80,7 +80,7 @@ const iconsSet = [
 	@media screen and (max-width: 1190px)
 		.poster
 			grid-template-columns: 50% 45%
-	@media screen and (max-width: 800px)
+	@media screen and (max-width: 850px)
 		.poster
 			background-image: url("/images/logo-background.png")
 			background-repeat: no-repeat
@@ -126,8 +126,10 @@ const iconsSet = [
 	@use "../styles/colors.sass" as c
 
 	.icons
-		display: grid
+		display: flex
 		align-self: center
+		flex-wrap: wrap
+		justify-content: space-between
 
 		height: 21em
 
@@ -137,9 +139,6 @@ const iconsSet = [
 		background-size: contain
 
 		font-size: 15px
-
-		grid-template-columns: repeat(3, 1fr)
-		grid-template-rows: repeat(2, 1fr)
 	.icons__icon
 		display: flex
 		align-items: center
@@ -147,25 +146,22 @@ const iconsSet = [
 
 		width: 10em
 		height: 10em
-		margin-bottom: 1em
+		margin: 1em 0 0 1em
 
 		border-radius: 2em
-		background-color: transparentize(c.$LightCyan, 0.7)
+		background-color: #000//transparentize(c.$LightCyan, 0.7)
 
 		justify-self: center
 		backdrop-filter: blur(1em)
-		&:nth-child(1), &:nth-child(4)
-			justify-self: start
-		&:nth-child(3), &:nth-child(6)
-			justify-self: end
 		img
 			width: 66.6%
 	@media screen and (max-width: 1190px)
 		.icons
-			grid-template-columns: repeat(2, 1fr)
+			justify-content: space-around
 		.icons__icon_first, .icons__icon_last
 			display: none
-	@media screen and (max-width: 800px)
+	@media screen and (max-width: 850px)
 		.icons
 			display: none
+
 </style>
