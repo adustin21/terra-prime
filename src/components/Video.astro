@@ -1,6 +1,7 @@
 ---
 import Service, {Props as ServiceProps} from "../layouts/Service.astro"
 import Gallery, { Movie } from "../preact-components/Gallery"
+import movieList from "../../public/data/VideoMovieList.json";
 
 const serviceProps: ServiceProps = {
 	title: "terra video",
@@ -10,16 +11,6 @@ const serviceProps: ServiceProps = {
 		labelBorder: "#FF6542"
 	}
 }
-const movieList: Movie[] = [
-	{src: "/images/poster-joker.png", alt: '"Joker" movie poster'},
-	{src: "/images/poster-thor.png", alt: '"Thor" movie poster'},
-	{src: "/images/poster-jurassic-park.png",
-	alt: '"Jurassic Park" movie poster'},
-	{src: "/images/poster-black-widow.png",
-	alt: '"Black Widow" movie poster'},
-	{src: "/images/poster-star-wars.png",
-	alt: '"Star Wars The Last Jedi" movie poster'},
-]
 ---
 
 <Service {...serviceProps}>

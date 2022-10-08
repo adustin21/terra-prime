@@ -1,0 +1,22 @@
+[
+	{
+		"src": "/images/poster-joker.png",
+		"alt": "\"Joker\" movie poster"
+	},
+	{
+		"src": "/images/poster-thor.png",
+		"alt": "\"Thor\" movie poster"
+	},
+	{
+		"src": "/images/poster-jurassic-park.png",
+		"alt": "\"Jurassic Park\" movie poster"
+	},
+	{
+		"src": "/images/poster-black-widow.png",
+		"alt": "\"Black Widow\" movie poster"
+	},
+	{
+		"src": "/images/poster-star-wars.png",
+		"alt": "\"Star Wars The Last Jedi\" movie poster"
+	}
+]
