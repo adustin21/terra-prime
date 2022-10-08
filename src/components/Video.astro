@@ -30,18 +30,20 @@ const serviceProps: ServiceProps = {
 
 <style lang="sass">
 	$TextWidth: 70%
-	.video
-		font-size: 20px
-		padding: 2em
-		.video__title
-			width: $TextWidth
-		.video__text
-			width: $TextWidth
-			margin: 1.4em 0 3.5em
-		@media screen and (max-width: 768px)
-			.video__title, .video__text
-				width: 100%
-		@media screen and (max-width: 475px)
-			padding: 2em 1em
 
+	.video
+		padding: 2em
+
+		font-size: 20px
+	.video__title
+		width: $TextWidth
+	.video__text
+		width: $TextWidth
+		margin: 1.4em 0 3.5em
+	@media screen and (max-width: 768px)
+		.video__title, .video__text
+			width: 100%
+	@media screen and (max-width: 475px)
+		.video
+			padding: 2em 1em
 </style>
