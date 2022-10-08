@@ -8,6 +8,7 @@ type Props = {
 
 function SubscribeButton({text}: Props) {
 	const isLoginFormOpen = useStore(loginFormState)
+
 	return (
 		<button
 		className={cs.container}
