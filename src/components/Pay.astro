@@ -30,51 +30,63 @@ const serviceProps: ServiceProps = {
 <style lang="sass">
 	@use "../styles/colors" as c
 	$TextWidth: 70%
+
 	.pay
-		font-size: 20px
-		padding: 2em 2em 10em
 		position: relative
+
+		padding: 2em 2em 10em
+
+		font-size: 20px
+	.pay__title
+		width: $TextWidth
+	.pay__text, .pay__terra-debit-card
+		position: absolute
+
+		width: 500px
+
+		border-radius: 1em 1em 0 0
+		box-shadow: 4px -4px 13px rgba(43, 6, 6, 0.25)
+	.pay__text
+		z-index: 1
+		bottom: -1em
+		left: 2em
+
+		box-sizing: border-box
+		height: 107px
+		padding: 1em
+
+		color: c.$PiggyPink
+		background:  linear-gradient(45deg,c.$Black,c.$DarkJungleGreen)
+		span
+			background:  linear-gradient(90deg, #CBF3F0 0%, #FFE1EA 100%)
+			-webkit-background-clip: text
+			background-clip: text
+
+			-webkit-text-fill-color: transparent
+			text-fill-color: transparent
+	.pay__terra-debit-card
+		z-index: 0
+		right: 2em
+		bottom: 0
+
+		height: 147px
+
+		background-image: url(/images/terra-debit-card.png)
+		background-size: cover
+	@media screen and (max-width: 769px)
 		.pay__title
-			width: $TextWidth
-		.pay__text, .pay__terra-debit-card
-			position: absolute
-			width: 500px
-			border-radius: 1em 1em 0 0
-			box-shadow: 4px -4px 13px rgba(43, 6, 6, 0.25)
-		.pay__text
-			padding: 1em
-			height: 107px
-			left: 2em
-			bottom: -1em
-			box-sizing: border-box
-			z-index: 1
-			background: linear-gradient(45deg,c.$Black,c.$DarkJungleGreen)
-			color: c.$PiggyPink
-			span
-				background: linear-gradient(90deg, #CBF3F0 0%, #FFE1EA 100%)
-				-webkit-background-clip: text
-				-webkit-text-fill-color: transparent
-				background-clip: text
-				text-fill-color: transparent
+			width: 100%
+	@media screen and (max-width: 627px)
 		.pay__terra-debit-card
-			height: 147px
-			right: 2em
-			bottom: 0
-			background-image: url(/images/terra-debit-card.png)
-			background-size: cover
-			z-index: 0
-		@media screen and (max-width: 769px)
-			.pay__title
-				width: 100%
-		@media screen and (max-width: 627px)
-			.pay__terra-debit-card
-				display: none
-			.pay__text
-				width: calc(100% - 4em)
-				height: 167px
-		@media screen and (max-width: 475px)
+			display: none
+		.pay__text
+			width: calc(100% - 4em)
+			height: 167px
+	@media screen and (max-width: 475px)
+		.pay
 			padding: 2em 1em 10em
-			.pay__text
-				left: 1em
-				width: calc(100% - 2em)
+		.pay__text
+			left: 1em
+
+			width: calc(100% - 2em)
 </style>
