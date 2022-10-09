@@ -12,40 +12,52 @@ import SubscribeButton from "../preact-components/SubscribeButton";
 	@use "../styles/colors" as c
 	$BackgroundBG: linear-gradient(45deg, c.$LightCyan, c.$PiggyPink, c.$LightCyan, c.$PiggyPink)
 	$BackgroundWidth: 25em
+
 	.quick-offer
-		font-size: 20px
+		position: relative
+
+		display: grid
+		overflow: hidden
+		justify-content: center
+
 		margin: 2em 0
 		padding: 2em 0
-		display: grid
-		justify-content: center
-		overflow: hidden
+
 		border-radius: 1em
-		position: relative
-		.quick-offer__title
-			margin-bottom: 1em
-			position: relative
-			padding: 0 .5em
-			text-align: center
-		.quick-offer__background
-			width: $BackgroundWidth
-			position: absolute
-			top: 6em
-			left: calc(50% - ($BackgroundWidth / 2))
-			height: 3em
-			scale: .9
-			background: $BackgroundBG
-			background-size: 200%
-			background-position: left
-			transition-duration: .3s
-			border-radius: inherit
-			z-index: -1
+
+		font-size: 20px
 		&:hover
 			.quick-offer__background
-				scale: 5
 				animation: back 5s linear 0s infinite
-		@media screen and (max-width: 768px)
-			.quick-offer__background
-				display: none
+
+				scale: 5
+	.quick-offer__title
+		position: relative
+
+		margin-bottom: 1em
+		padding: 0 .5em
+
+		text-align: center
+	.quick-offer__background
+		position: absolute
+		z-index: -1
+		top: 6em
+		left: calc(50% - ($BackgroundWidth / 2))
+
+		width: $BackgroundWidth
+		height: 3em
+
+		transition-duration: .3s
+
+		border-radius: inherit
+		background: $BackgroundBG
+		background-position: left
+		background-size: 200%
+
+		scale: .9
+	@media screen and (max-width: 768px)
+		.quick-offer__background
+			display: none
 @keyframes back
 	0%
 		background-position: left
@@ -53,4 +65,5 @@ import SubscribeButton from "../preact-components/SubscribeButton";
 		background-position: right
 	100%
 		background-position: left
+
 </style>
