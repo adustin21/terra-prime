@@ -1,10 +1,8 @@
 ---
-import type { Question } from "../preact-components/QuestionBox";
-import QuestionBox from "../preact-components/QuestionBox";
-import questionJSON from "../../public/data/questions.json"
-import { Fragment } from "preact";
-const questions = questionJSON as Question[]
+import QuestionBox from "../preact-components/QuestionBox"
+import questions from "../../public/data/questions.json"
 ---
+
 <div class="faq">
 	<h2 class="faq__title">Frequently Asked Questions</h2>
 	{questions.map(question => {
