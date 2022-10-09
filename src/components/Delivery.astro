@@ -1,5 +1,7 @@
 ---
 import Service, {Props as ServiceProps} from "../layouts/Service.astro"
+import benefitsUntyped from "../../public/data/DeliveryBenefits.json"
+const benefits = benefitsUntyped as string[]
 
 const serviceProps: ServiceProps = {
 	title: "terra delivery",
@@ -9,11 +11,6 @@ const serviceProps: ServiceProps = {
 		labelBorder: "#FFE1EA"
 	}
 }
-const preferences: string[] = [
-	"100,000 products for the whole family",
-	"Protected chat with the courier and picker - discuss any details",
-	"The app is adapted for the visually impaired"
-]
 const bubbles: string[] = ["b1","b2","b3","b4","b5","b6","b7"]
 ---
 
@@ -32,8 +29,8 @@ const bubbles: string[] = ["b1","b2","b3","b4","b5","b6","b7"]
 	<div class="delivery__preferences-box">
 		{bubbles.map(bubble=>
 			<div class="delivery__bubble" id={bubble}></div>)}
-		{preferences.map(preference =>
-			<div class="delivery__preference-card">{preference}</div>)}
+		{benefits.map(benefit =>
+			<div class="delivery__preference-card">{benefit}</div>)}
 	</div>
 </div>
 </Service>
