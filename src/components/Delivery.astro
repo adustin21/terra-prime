@@ -40,99 +40,121 @@ const bubbles: string[] = ["b1","b2","b3","b4","b5","b6","b7"]
 
 <style lang="sass">
 	$TextWidth: 70%
+
 	.delivery
-		font-size: 20px
 		padding: 2em
-		.delivery__title
-			width: $TextWidth
-		.delivery__text
-			width: $TextWidth
-			margin: 1.4em 0 3.5em
+
+		font-size: 20px
+	.delivery__title
+		width: $TextWidth
+	.delivery__text
+		width: $TextWidth
+		margin: 1.4em 0 3.5em
+	.delivery__preferences-box
+		position: relative
+
+		display: flex
+		justify-content: space-between
+	.delivery__preference-card
+		box-sizing: border-box
+		width: 27.5%
+		padding: 1em
+
+		user-select: none
+		transition-duration: .4s
+
+		border-radius: .5em
+		background: rgba(255, 255, 255, 0.3)
+		box-shadow: 0px 0px 4px #82B1AE50
+
+		font-size: 20px
+		font-weight: bold
+
+		backdrop-filter: blur(10px)
+		&:hover
+			background: rgba(255, 255, 255, 0.9)
+	.delivery__bubble
+		position: absolute
+		z-index: -1
+
+		width: 5em
+		height: 5em
+
+		border-radius: 100%
+	@media screen and (max-width: 769px)
+		.delivery__title, .delivery__text
+			width: 100%
+		.delivery__preference-card
+			width: 45%
+			&:last-child
+				display: none
+	@media screen and (max-width: 540px)
 		.delivery__preferences-box
-			display: flex
-			justify-content: space-between
-			position: relative
-			.delivery__preference-card
-				width: 27.5%
-				font-size: 20px
-				font-weight: bold
-				padding: 1em
-				box-sizing: border-box
-				background: rgba(255, 255, 255, 0.3)
-				box-shadow: 0px 0px 4px #82B1AE50
-				border-radius: .5em
-				backdrop-filter: blur(10px)
-				user-select: none
-				transition-duration: .4s
-				&:hover
-					background: rgba(255, 255, 255, 0.9)
-			.delivery__bubble
-				position: absolute
-				border-radius: 100%
-				width: 5em
-				height: 5em
-				z-index: -1
-			#b1
-				background: #F17F29
-				top: -12px
-				left: 20px
-			#b2
-				background: #FF6542
-				left: 223px
-				top: 33px
-				scale: 0.5
-			#b3
-				background: #CBF3F0
-				left: 334px
-				top: 5px
-				scale: 0.7
-			#b4
-				background: #F87236
-				left: 567px
-				top: 0px
-				scale: 1.2
-			#b5
-				background: #CD0000
-				right: 119px
-				top: -50px
-				scale: 0.5
-			#b6
-				background: #091B1F
-				right: 233px
-				top: 0px
-				scale: 0.3
-			#b7
-				background: #F8B08A
-				right: -30px
-				top: 30px
-				scale: 0.5
-		@media screen and (max-width: 1110px)
-			#b4
-				display: none
-		@media screen and (max-width: 769px)
-			.delivery__title, .delivery__text
-				width: 100%
-			.delivery__preferences-box
-				.delivery__preference-card
-					width: 45%
-					&:last-child
-						display: none
-			#b4
-				display: none
-		@media screen and (max-width: 540px)
-			.delivery__preferences-box
-				background-image: url(/images/circles-backround.png)
-				background-size: cover
-				display: grid
-				.delivery__bubble
-					display: none
-				.delivery__preference-card
-					width: 100%
-					margin-bottom: 1em
-					&:last-child
-						display: initial
-		@media screen and (max-width: 475px)
+			display: grid
+
+			background-image: url(/images/circles-backround.png)
+			background-size: cover
+		.delivery__bubble
+			display: none
+		.delivery__preference-card
+			width: 100%
+			margin-bottom: 1em
+			&:last-child
+				display: initial
+	@media screen and (max-width: 475px)
+		.delivery
 			padding: 2em 1em
+</style>
 
+<style lang="sass">
+	#b1
+		top: -12px
+		left: 20px
 
+		background: #F17F29
+	#b2
+		top: 33px
+		left: 223px
+
+		background: #FF6542
+
+		scale: 0.5
+	#b3
+		top: 5px
+		left: 334px
+
+		background: #CBF3F0
+
+		scale: 0.7
+	#b4
+		top: 0px
+		left: 567px
+
+		background: #F87236
+
+		scale: 1.2
+	#b5
+		top: -50px
+		right: 119px
+
+		background: #CD0000
+
+		scale: 0.5
+	#b6
+		top: 0px
+		right: 233px
+
+		background: #091B1F
+
+		scale: 0.3
+	#b7
+		top: 30px
+		right: -30px
+
+		background: #F8B08A
+
+		scale: 0.5
+	@media screen and (max-width: 1110px)
+		#b4
+			display: none
 </style>
