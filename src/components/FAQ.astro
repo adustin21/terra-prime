@@ -12,17 +12,22 @@ import questions from "../../public/data/questions.json"
 		)
 	})}
 </div>
+
 <style lang="sass">
 	@use '../styles/colors' as c
+
 	.faq
-		font-size: 20px
 		padding: 2em
-		background: c.$White
+
 		border-radius: 2em
-		.faq__title
-			margin-bottom: .7em
-		.faq__space
-			opacity: 0
-		@media screen and (max-width: 475px)
+		background: c.$White
+
+		font-size: 20px
+	.faq__title
+		margin-bottom: .7em
+	.faq__space
+		opacity: 0
+	@media screen and (max-width: 475px)
+		.faq
 			padding: 2em 1em
 </style>
