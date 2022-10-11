@@ -15,7 +15,7 @@ function Gallery({movieList}: Props) {
 			<button
 			aria-label="Scroll to the left."
 			onClick={e=>moveCards(e, 'start')}
-			id={cs.gallery__button_left}
+			id={cs.button_left}
 			className={cs.button}/>
 			<div className={cs.cardsContainer}>
 				{movieList.map(movie=>{
