@@ -10,7 +10,7 @@ function LoginForm({}: Props) {
 		const target = e.target as HTMLElement
 		if (!target) return ;
 		if (target.className === cs.container ||
-			target.className === cs.container__button_close){
+			target.className === cs.button_close){
 				errorPopupState.set(false)
 		}
 	}
@@ -18,14 +18,14 @@ function LoginForm({}: Props) {
 	if(!windowIsOpen) return null;
 	return(
 		<div className={cs.container} onClick={closeWindow}>
-		<div className={cs.container__box}>
-			<h2 className={cs.container__title}>
+		<div className={cs.box}>
+			<h2 className={cs.title}>
 				Gift voucher purchase is not available at this time.
 				<br/>
 				Please try again later.
 			</h2>
 			<button type="reset"
-			className={cs.container__button_close}>close window</button>
+			className={cs.button_close}>close window</button>
 		</div>
 		</div>
 	)
