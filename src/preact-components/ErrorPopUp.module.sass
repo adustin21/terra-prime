@@ -1,34 +1,44 @@
 @use '../styles/colors' as c
 
 .container
-	font-size: 20px
 	position: fixed
 	top: 0
 	left: 0
+
+	display: flex
+	align-items: center
+	justify-content: center
+
 	width: 100%
 	height: 100vh
+
 	background: transparentize(c.$DarkJungleGreen, 0.9)
-	display: flex
+
+	font-size: 20px
+.container__box
+	display: grid
 	justify-content: center
-	align-items: center
-	.container__box
-		width: 37em
-		background: #F5FDFC
-		padding: 3em
-		border-radius: 2em
-		box-shadow: 0px 4px 4px rgba(160, 192, 190, 0.25)
-		box-sizing: border-box
-		display: grid
-		justify-content: center
-	.container__title
-		color: c.$PrincetonOrange
-		text-align: center
-		margin-bottom: 2em
-	.container__button_close
-		font-size: inherit
-		padding: .75em 1.5em
-		border: none
-		border-radius: .5em
-		background: c.$Tomato
-		color: c.$LightCyan
-		margin: 0 auto
+
+	box-sizing: border-box
+	width: 37em
+	padding: 3em
+
+	border-radius: 2em
+	background: #F5FDFC
+	box-shadow: 0px 4px 4px rgba(160, 192, 190, 0.25)
+.container__title
+	margin-bottom: 2em
+
+	text-align: center
+
+	color: c.$PrincetonOrange
+.container__button_close
+	margin: 0 auto
+	padding: .75em 1.5em
+
+	color: c.$LightCyan
+	border: none
+	border-radius: .5em
+	background: c.$Tomato
+
+	font-size: inherit
