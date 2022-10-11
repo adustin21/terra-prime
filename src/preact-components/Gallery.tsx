@@ -11,22 +11,22 @@ type Props = {
 
 function Gallery({movieList}: Props) {
 	return (
-		<div className={cs.gallery}>
+		<div className={cs.container}>
 			<button
 			aria-label="Scroll to the left."
 			onClick={e=>moveCards(e, 'start')}
 			id={cs.gallery__button_left}
-			className={cs.gallery__button}/>
-			<div className={cs.gallery__cardsContainer}>
+			className={cs.button}/>
+			<div className={cs.cardsContainer}>
 				{movieList.map(movie=>{
-					return <img {...movie} className={cs.gallery__card}/>
+					return <img {...movie} className={cs.card}/>
 				})}
 			</div>
 			<button
 			aria-label="Scroll to the right."
 			onClick={e=>moveCards(e, 'end')}
-			id={cs.gallery__button_right}
-			className={cs.gallery__button}/>
+			id={cs.button_right}
+			className={cs.button}/>
 		</div>
 	)
 }

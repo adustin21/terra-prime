@@ -5,7 +5,7 @@ $GalleryCardWidth: 193px
 
 .gallery
 	position: relative
-.gallery__button
+.button
 	position: absolute
 	top: math.div($GalleryCardHeight, 2 ) - 20px
 
@@ -20,11 +20,11 @@ $GalleryCardWidth: 193px
 	background-position: center
 	background-size: 30%
 	box-shadow: 1px 1px 3px 0 #4e726f55
-#gallery__button_right
+#button_right
 	left: calc(100% - 40px)
 
 	background-image: url("/images/right-arrow.png")
-.gallery__cardsContainer
+.cardsContainer
 	overflow-x: auto
 	overflow-y: hidden
 
@@ -38,7 +38,7 @@ $GalleryCardWidth: 193px
 	scroll-behavior: smooth
 	&::-webkit-scrollbar
 		display: none
-.gallery__card
+.card
 	display: inline-block
 
 	width: $GalleryCardWidth
@@ -48,11 +48,11 @@ $GalleryCardWidth: 193px
 	border-radius: 10px
 	background: c.$LightCyan
 @media screen and ( max-width: 768px )
-	.gallery__button
+	.button
 		display: none
-	.gallery__card
+	.card
 		margin: 0 60px 0 0
 @media screen and ( max-width: 475px )
-	.gallery__card
+	.card
 		margin: 0 30px 0 0
 
