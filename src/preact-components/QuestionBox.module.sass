@@ -1,35 +1,46 @@
 @use '../styles/colors' as c
 
 .container
-	font-size: 20px
-	padding: 1em
-	background: c.$LightCyan
-	border-radius: 10px
 	position: relative
-	.title
-		width: calc( 100% - 1.5em )
-	.crossButton
-		font-size: inherit
-		width: 1em
-		height: 1em
-		background: url("/images/cross-icon.png")
-		background-size: cover
-		border: none
-		position: absolute
-		right: 1em
-		top: 1em
-		transition-duration: .3s
-		cursor: pointer
-	.space
-		display: none
-		margin: 1em 0
-		border: none
-		height: 1px
-		background: transparentize(c.$Black,0.7)
-	.text
-		display: none
-		margin: 0
-		white-space: pre-wrap
+
+	padding: 1em
+
+	border-radius: 10px
+	background: c.$LightCyan
+
+	font-size: 20px
+.title
+	width: calc( 100% - 1.5em )
+.crossButton
+	position: absolute
+	top: 1em
+	right: 1em
+
+	width: 1em
+	height: 1em
+
+	cursor: pointer
+	transition-duration: .3s
+
+	border: none
+	background: url("/images/cross-icon.png")
+	background-size: cover
+
+	font-size: inherit
+.space
+	display: none
+
+	height: 1px
+	margin: 1em 0
+
+	border: none
+	background: transparentize(c.$Black,0.7)
+.text
+	display: none
+
+	margin: 0
+
+	white-space: pre-wrap
 .container_open
 	.crossButton
 		rotate: 45deg
