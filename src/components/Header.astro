@@ -9,14 +9,15 @@ import SignInButton from "../preact-components/SignInButton";
 </header>
 
 <style lang="sass">
-	@use "../styles/colors.sass" as c
 	.header
 		display: flex
-		justify-content: space-between
 		align-items: center
+		justify-content: space-between
+
 		padding: 16px 0
-		@media screen and (max-width: 400px)
+	@media screen and (max-width: 400px)
+		.header
 			justify-content: center
-			.header__sign-in-section
-				display: none
+		.header__sign-in-section
+			display: none
 </style>
