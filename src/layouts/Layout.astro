@@ -30,15 +30,17 @@ const { title } = Astro.props;
 	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap')
 
 	body
-		font-family: 'Josefin Sans'
-		font-style: normal
-		background: c.$WhiteCyan
-		color: c.$DarkJungleGreen
 		margin: 0
 		padding: 0
+
+		color: c.$DarkJungleGreen
+		background: c.$WhiteCyan
+
+		font-family: 'Josefin Sans'
+		font-style: normal
 	body>*
-		margin: 0 auto
 		width: 1110px
+		margin: 0 auto
 		padding-bottom: 80px
 		@media screen and (max-width: 1190px)
 			width: 95%
@@ -66,5 +68,4 @@ const { title } = Astro.props;
 		font-family: inherit
 	button
 		font-weight: bold
-
 </style>
