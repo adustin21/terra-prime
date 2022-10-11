@@ -18,54 +18,52 @@
 
 <style lang="sass">
 	@use "../styles/colors" as c
+
 	.footer
-		font-size: 20px
 		display: flex
-		justify-content: space-between
 		align-items: center
+		justify-content: space-between
+
 		margin-top: 2.5em
-		.footer__nav
-			.footer__ul
-				display: flex
-				margin: 0
-				padding: 0
-				.footer__li
-					list-style: none
-					margin-right: 1.5em
-					a
-						color: c.$DarkJungleGreen
-		.footer__copyright
-			margin-top: 1em
-			b
-				margin: 0 5em 0 3em
-		@media screen and (max-width: 800px)
+
+		font-size: 20px
+	.footer__ul
+		display: flex
+
+		margin: 0
+		padding: 0
+	.footer__li
+		margin-right: 1.5em
+
+		list-style: none
+		a
+			color: c.$DarkJungleGreen
+	.footer__copyright
+		margin-top: 1em
+		b
+			margin: 0 5em 0 3em
+	@media screen and (max-width: 800px)
+		.footer
 			justify-content: center
-			.footer__nav
-				.footer__ul
-					justify-content: center
-					.footer__li
-						margin: 0 1em
-			.footer__copyright
+		.footer__ul
+			justify-content: center
+		.footer__li
+			margin: 0 1em
+		.footer__copyright
+			display: flex
+			justify-content: center
+		.footer__logo
+			display: none
+	@media screen and (max-width: 600px)
+		.footer__ul
+			flex-direction: column
+		.footer__li
+			margin: .5em auto
+		.footer__copyright
+			span
 				display: flex
-				justify-content: center
-			.footer__logo
-				display: none
-		@media screen and (max-width: 600px)
-			.footer__nav
-				.footer__ul
-					flex-direction: column
-					.footer__li
-						margin: .5em auto
-						text
-			.footer__copyright
-				span
-					display: flex
-					align-items: center
-					flex-direction: column
-					b
-						margin: 1em 0
-
-
-
-
+				align-items: center
+				flex-direction: column
+				b
+					margin: 1em 0
 </style>
