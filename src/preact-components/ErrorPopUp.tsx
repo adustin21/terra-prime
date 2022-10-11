@@ -2,7 +2,6 @@ import cs from "./ErrorPopUp.module.sass";
 import { useStore } from "@nanostores/preact";
 import { errorPopupState } from "../nanostores/initial";
 
-type SignMode = "in" | "up"
 type Props = {}
 
 function LoginForm({}: Props) {
