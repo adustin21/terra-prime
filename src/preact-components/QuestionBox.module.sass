@@ -6,9 +6,9 @@
 	background: c.$LightCyan
 	border-radius: 10px
 	position: relative
-	.container__title
+	.title
 		width: calc( 100% - 1.5em )
-	.container__crossButton
+	.crossButton
 		font-size: inherit
 		width: 1em
 		height: 1em
@@ -20,18 +20,18 @@
 		top: 1em
 		transition-duration: .3s
 		cursor: pointer
-	hr
+	.space
 		display: none
 		margin: 1em 0
 		border: none
 		height: 1px
 		background: transparentize(c.$Black,0.7)
-	.container__text
+	.text
 		display: none
 		margin: 0
 		white-space: pre-wrap
 .container_open
-	.container__crossButton
+	.crossButton
 		rotate: 45deg
-	hr, .container__text
+	.space, .text
 		display: block
