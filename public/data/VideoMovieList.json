@@ -1,22 +1,22 @@
 [
 	{
-		"src": "/images/poster-joker.png",
+		"src": "/images/poster-joker.webp",
 		"alt": "\"Joker\" movie poster"
 	},
 	{
-		"src": "/images/poster-thor.png",
+		"src": "/images/poster-thor.webp",
 		"alt": "\"Thor\" movie poster"
 	},
 	{
-		"src": "/images/poster-jurassic-park.png",
+		"src": "/images/poster-jurassic-park.webp",
 		"alt": "\"Jurassic Park\" movie poster"
 	},
 	{
-		"src": "/images/poster-black-widow.png",
+		"src": "/images/poster-black-widow.webp",
 		"alt": "\"Black Widow\" movie poster"
 	},
 	{
-		"src": "/images/poster-star-wars.png",
+		"src": "/images/poster-star-wars.webp",
 		"alt": "\"Star Wars The Last Jedi\" movie poster"
 	}
 ]

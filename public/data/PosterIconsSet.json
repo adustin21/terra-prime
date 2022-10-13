@@ -1,26 +1,26 @@
 [
 	{
-		"ico": "/images/terra-logo.png",
+		"ico": "/images/terra-logo.webp",
 		"alt": "Terra Logo"
 	},
 	{
-		"ico": "/images/terra-music.png",
+		"ico": "/images/terra-music.webp",
 		"alt": "Terra Music Logo"
 	},
 	{
-		"ico": "/images/terra-video.png",
+		"ico": "/images/terra-video.webp",
 		"alt": "Terra Video Logo"
 	},
 	{
-		"ico": "/images/terra-delivery.png",
+		"ico": "/images/terra-delivery.webp",
 		"alt": "Terra Delivery Logo"
 	},
 	{
-		"ico": "/images/terra-taxi.png",
+		"ico": "/images/terra-taxi.webp",
 		"alt": "Terra Taxi Logo"
 	},
 	{
-		"ico": "/images/terra-prime.png",
+		"ico": "/images/terra-prime.webp",
 		"alt": "Terra Prime Logo"
 	}
 ]
