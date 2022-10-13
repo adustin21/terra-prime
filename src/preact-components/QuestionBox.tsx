@@ -15,6 +15,7 @@ function QuestionBox({question}: Props) {
 		<div className={`${cs.container} ${isOpen && cs.container_open}`}>
 			<h3 className={cs.title}>{question.question}</h3>
 			<button
+			aria-label={isOpen?"See answer" : "Hide answer"}
 			onClick={e=>setIsOpen(!isOpen)}
 			className={cs.crossButton}/>
 			<hr className={cs.space}/>
